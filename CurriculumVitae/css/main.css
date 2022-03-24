@@ -1,0 +1,216 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto';
+	margin: 0;
+}
+
+form {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+p {
+	text-align: center;
+}
+
+.left {
+    float: left !important;
+}
+
+.right {
+    float: right !important;
+}
+
+.title {
+	text-align: center;
+}
+
+.textfield {
+	padding: 8px;
+	width: 100%;
+  	border: 2px solid #AAAAAA;
+	border-radius: 8px;
+}
+
+.select {
+	padding: 8px;
+	width: 100%;
+	background-color: #EEEEEE;
+  	border: 2px solid #AAAAAA;
+	border-radius: 8px;
+	transition: 0.2s;
+}
+
+.select:hover {
+	background-color: #DDDDDD;
+}
+
+.button {
+	padding: 8px;
+	background-color: #4CAF50;
+	color: #ffffff;
+  	border: 0;
+	border-radius: 8px;
+	font-size: 15px;
+	transition: 0.1s;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.button:hover {
+	background-color: #357A38;
+}
+
+.back {
+	background-color: #DDDDDD;
+	color: #000000;
+}
+
+.back:hover {
+	background-color: #AAAAAA;
+}
+
+.form {
+	padding: 20px;
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+	box-sizing: border-box;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+	border-radius: 32px;
+}
+
+.tabcontent {
+	display: none;
+}
+
+.column {
+	float: left;
+	width: 50%;
+	padding: 8px;
+}
+
+.column-single {
+	padding: 8px;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+	margin-top: 16px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.tablinks {
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-align: center;
+	border-radius: 8px;
+}
+
+img {
+	width: 250px;
+	height: 250px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	border: 5px solid #777777;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+#ImageInputBtn {
+	display: none;
+}
+
+#ImageLabel {
+	display: block;
+	padding: 10px;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	background: #4CAF50;
+	color: #ffffff;
+	font-size: 15px;
+	border-radius: 8px;
+	transition: 0.1s;
+}
+
+#ImageLabel:hover {
+	background: #357A38;
+}
+
+textarea {
+	resize: vertical;
+	min-height: 300px;
+}
+
+.checkbox {
+	display: none;
+}
+
+.checkboxLabel {
+	display: inline-block;
+	width: 100%;
+	padding: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-align: center;
+	background:#DDDDDD;
+	border-radius: 8px;
+	transition: 0.1s;
+	font-size: 15px;
+}
+
+.checkboxLabel:hover {
+	background:#AAAAAA;
+}
+
+#italian:checked ~ label[for="italian"],
+#english:checked ~ label[for="english"],
+#spanish:checked ~ label[for="spanish"],
+#french:checked ~ label[for="french"],
+#german:checked ~ label[for="german"],
+#chinese:checked ~ label[for="chinese"],
+#japanese:checked ~ label[for="japanese"],
+#russian:checked ~ label[for="russian"],
+#dutch:checked ~ label[for="dutch"],
+#arabian:checked ~ label[for="arabian"] {
+	background: #4CAF50;
+	color: #ffffff;
+}
+
+#italian:checked ~ label[for="italian"]:hover,
+#english:checked ~ label[for="english"]:hover,
+#spanish:checked ~ label[for="spanish"]:hover,
+#french:checked ~ label[for="french"]:hover,
+#german:checked ~ label[for="german"]:hover,
+#chinese:checked ~ label[for="chinese"]:hover,
+#japanese:checked ~ label[for="japanese"]:hover,
+#russian:checked ~ label[for="russian"]:hover,
+#dutch:checked ~ label[for="dutch"]:hover,
+#arabian:checked ~ label[for="arabian"]:hover {
+	background: #357A38;
+	color: #ffffff;
+}
+
+#postPDF {
+	display: none;
+}

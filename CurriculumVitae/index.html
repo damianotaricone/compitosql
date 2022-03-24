@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<!-- Metatags -->
+		<meta charset="utf-8">
+		<meta name="title" content="Curriculum Vitae">
+		<meta name="description" content="Utilizzando questo sito creerai un Curriculum vitae">
+		<meta name="keywords" content="curriculum vitae cv">
+		<meta name="author" content="Arcidiacono - Pecilli - Taricone">
+		<meta name="robots" content="INDEX,FOLLOW">
+		<meta name="creation_Date" content="01/31/2022">
+		<meta name="revisit-after" content="60 days">
+
+		<!-- Title -->
+		<title>Curriculum Vitae</title>
+
+		<!-- Adjustment for mobile devices -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- CSS -->
+		<link rel='stylesheet' type='text/css' href="css/main.css">
+
+		<!-- JS -->
+		<script src="js/main.js"></script>
+		<script src="js/html2pdf.bundle.min.js"></script>
+		<script src="js/genpdf.js"></script>
+
+		<!-- Roboto -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+	</head>
+	<body onload="loadPage()">
+		<h1 class="title">Curriculum Vitae</h1>
+		<div class="form">
+			<div class="tab center">
+				<label class="tablinks">Dati anagrafici</label>
+				<label class="tablinks">Informazioni varie</label>
+				<label class="tablinks">Immagine</label>
+			</div>
+
+			<form id="form-pdf" name="CV" method="POST" action= "./checkCV.php">
+				<input class="button right" type="submit" value="Invia dati" onclick="checkData()">
+				<div id="First" class="tabcontent">
+					<div class="row">
+						<div class="column">
+							<label for="nome">Nome*</label>
+							<input class="textfield" type="text" name="nome" id="nome" placeholder="Es. Mario" required="">
+						</div>
+						<div class="column">
+							<label for="cognome">Cognome*</label>
+							<input class="textfield" type="text" name="cognome" id="cognome" placeholder="Es. Clima" required="">
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="column">
+							<label for="email">E-Mail*</label>
+							<input class="textfield" type="text" name="email" id='email' placeholder="Es. marioclima@example.org" required="">
+						</div>
+						<div class="column">
+							<label for="cell">Cellulare*</label>
+							<input class="textfield" type="text" name="cell" id='cell' placeholder="Es. +39 312 456 7890" required="">
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="column-single">
+							<label for="genere">Genere</label>
+							<select class="select" name="genere" id="genere">
+								<option>Non specificato</option>
+								<option>Maschio</option>
+								<option>Femmina</option>
+								<option>Altro</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="column-single">
+							<label for="indirizzo">Indirizzo di residenza*</label>
+							<input class="textfield" type="text" name="indirizzo" id="indirizzo" placeholder="Es. Via Roma, 5" required="">
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="column">
+							<label for="cap">CAP*</label>
+							<input class="textfield" type="text" name="cap" id="cap" required="" placeholder="Es. 00100">
+						</div>
+						<div class="column">
+							<label for="citta">Città di residenza*</label>
+							<select class="select" name="citta" id="citta">
+								<option>Seleziona</option>
+								<option>Ancona</option>
+								<option>Aosta</option>
+								<option>Bari</option>
+								<option>Bologna</option>
+								<option>Bolzano</option>
+								<option>Brescia</option>
+								<option>Cagliari</option>
+								<option>Campobasso</option>
+								<option>Catania</option>
+								<option>Catanzaro</option>
+								<option>Firenze</option>
+								<option>Foggia</option>
+								<option>Genova</option>
+								<option>Lecce</option>
+								<option>Matera</option>
+								<option>Messina</option>
+								<option>Milano</option>
+								<option>Napoli</option>
+								<option>Novara</option>
+								<option>Palermo</option>
+								<option>Perugia</option>
+								<option>Pescara</option>
+								<option>Pisa</option>
+								<option>Potenza</option>
+								<option>Reggio Calabria</option>
+								<option>Rieti</option>
+								<option>Rimini</option>
+								<option>Roma</option>
+								<option>Salerno</option>
+								<option>Sassari</option>
+								<option>Torino</option>
+								<option>Trento</option>
+								<option>Trieste</option>
+								<option>Udine</option>
+								<option>Venezia</option>
+								<option>Verona</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="column">
+							<label for="datanascita">Data di nascita*</label>
+							<input class="textfield" type="date" name="datanascita" id="datanascita" required="">
+						</div>
+						<div class="column">
+							<label for="cittanascita">Città di nascita*</label>
+							<select class="select" name="cittanascita" id="cittanascita">
+								<option>Seleziona</option>
+								<option>Ancona</option>
+								<option>Aosta</option>
+								<option>Bari</option>
+								<option>Bologna</option>
+								<option>Bolzano</option>
+								<option>Brescia</option>
+								<option>Cagliari</option>
+								<option>Campobasso</option>
+								<option>Catania</option>
+								<option>Catanzaro</option>
+								<option>Firenze</option>
+								<option>Foggia</option>
+								<option>Genova</option>
+								<option>Lecce</option>
+								<option>Matera</option>
+								<option>Messina</option>
+								<option>Milano</option>
+								<option>Napoli</option>
+								<option>Novara</option>
+								<option>Palermo</option>
+								<option>Perugia</option>
+								<option>Pescara</option>
+								<option>Pisa</option>
+								<option>Potenza</option>
+								<option>Reggio Calabria</option>
+								<option>Rieti</option>
+								<option>Rimini</option>
+								<option>Roma</option>
+								<option>Salerno</option>
+								<option>Sassari</option>
+								<option>Torino</option>
+								<option>Trento</option>
+								<option>Trieste</option>
+								<option>Udine</option>
+								<option>Venezia</option>
+								<option>Verona</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column-single">
+							<a class="button right" onclick="checkFirstData()">Prossimo</a>
+						</div>
+					</div>
+				</div>
+
+				<div id="Second" class="tabcontent">
+					<div class="row">
+						<div class="column">
+							<label for="titolostudio">Titolo di studio*</label>
+							<select class="select" name="titolostudio" id="titolostudio">
+								<option>Seleziona</option>
+								<option>Assente</option>
+								<option>Diploma Terza media</option>
+								<option>Diploma Istituto Superiore</option>
+								<option>Laurea</option>
+								<option>Magistrale</option>
+							</select>
+						</div>
+						<div class="column">
+							<label for="professione">Professione*</label>
+							<input class="textfield" name="professione" id="professione" placeholder="Es. Agricoltore/Meccanico/Nessuna">
+						</div>
+					</div>
+					<div class="row">
+						<div class="column">
+							<label for="patente">Patente*</label>
+							<select class="select" name="patente" id="patente">
+								<option>Seleziona</option>
+								<option>Nessuna</option>
+								<option>AM</option>
+								<option>A1</option>
+								<option>A2</option>
+								<option>A</option>
+								<option>B</option>
+							</select>
+						</div>
+						<div class="column">
+							<label for="hobbies">Hobbies</label>
+							<input class="textfield" name="hobbies" id="hobbies" placeholder="Es. DIY, Collezionismo, Modellismo">
+						</div>
+					</div>
+					<div>
+						<div class="row">
+							<label class="center" id="lingua">Lingue conosciute (almeno B1)*</label>
+							<div class="column-single center">
+								<input class="checkbox" type="checkbox" id="italian" name="italian">
+								<input class="checkbox" type="checkbox" id="english" name="english">
+								<input class="checkbox" type="checkbox" id="spanish" name="spanish">
+								<input class="checkbox" type="checkbox" id="french" name="french">
+								<input class="checkbox" type="checkbox" id="german" name="german">
+
+								<label class="checkboxLabel" for="italian">Italiano</label>
+								<label class="checkboxLabel" for="english">Inglese</label>
+								<label class="checkboxLabel" for="spanish">Spagnolo</label>
+								<label class="checkboxLabel" for="french">Francese</label>
+								<label class="checkboxLabel" for="german">Tedesco</label>
+							</div>
+							<div class="column-single center">
+								<input class="checkbox" type="checkbox" id="chinese" name="chinese">
+								<input class="checkbox" type="checkbox" id="japanese" name="japanese">
+								<input class="checkbox" type="checkbox" id="russian" name="russian">
+								<input class="checkbox" type="checkbox" id="dutch" name="dutch">
+								<input class="checkbox" type="checkbox" id="arabian" name="arabian">
+
+								<label class="checkboxLabel" for="chinese">Cinese</label>
+								<label class="checkboxLabel" for="japanese">Giapponese</label>
+								<label class="checkboxLabel" for="russian">Russo</label>
+								<label class="checkboxLabel" for="dutch">Olandese</label>
+								<label class="checkboxLabel" for="arabian">Arabo</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column-single">
+							<label for="esperienza">Esperienza lavorativa</label>
+							<textarea class="textfield" name="esperienza" id="esperienza" placeholder="Descrivi brevemente la tua esperienza lavorativa"></textarea>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="column-single">
+							<a class="button back left" onclick="changeTab(event, 'First')">Precendente</a>
+							<a class="button right" onclick="checkSecondData()">Prossimo</a>
+						</div>
+					</div>
+				</div>
+
+				<div id="Third" class="tabcontent">
+					<div class="row">
+						<div class="column-single">
+							<div class="center">
+								<img id="image-preview" alt="Avatar" src="img/avatar.png">
+							</div>
+							<label id="ImageLabel" for="ImageInputBtn">Carica una tua foto</label>
+							<input type="file" id="ImageInputBtn" accept="image/*" onchange="showPreview(event);">
+						</div>
+					</div>
+					<div class="row">
+						<div class="column-single">
+							<a class="button back left" onclick="changeTab(event, 'Second')">Precendente</a>
+							<input class="button right" type="submit" value="Invia dati via mail" onclick="checkData()">
+							<a class="button right" onclick="generatePDF()">Genera PDF</a>
+						</div>
+					</div>
+				</div>
+			</form>
+			<div id="postPDF">
+				<p>PDF generato correttamente</p>
+				<p>Puoi inviarlo all'indirizzo mail <a href="mailto:info@arci.me">info@arci.me</a></p>
+			</div>
+		</div>
+	</body>
+</html>
+
+<?php
+
+echo("Ciao");
+?>
